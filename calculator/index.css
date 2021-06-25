@@ -1,0 +1,46 @@
+h1, .center {
+    text-align: center;
+}
+.center{
+    margin-bottom: 5px;
+}
+
+.btn, .final, .clear , .back{
+    width : 75px;
+    height : 75px;
+    font-size : 15px;
+    background-color : transparent;
+    border : 1px solid grey
+}
+
+.display{
+    width: 300px;
+    height: 50px;
+    font-size : 20px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    padding : 5px;
+    text-align: right;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items : center
+}
+span{
+    font-size: 30px;
+    margin: 0px 3px
+}
+
+.clear{
+    color: red
+}
+
+.final{
+    color: green
+}
+
+.back{
+    color: orange
+}

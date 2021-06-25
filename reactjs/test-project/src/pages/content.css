@@ -1,0 +1,19 @@
+
+.top{
+    display: flex;
+    justify-content: space-between
+}
+
+.top-right{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.head, .subHead{ 
+    margin: 3px
+}
+
+.head{
+    color :aqua;
+}

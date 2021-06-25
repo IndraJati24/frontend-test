@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Navbar from './components/navbar'
+import Tab from './components/tab'
+import Content from './pages/content'
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state={
+      mobile : true
+    }
+  }
+  showButton=() => {
+    if(window.innerWidth <= 800){
+        this.setState({mobile : false})
+    } else {
+        this.setState({mobile : true})
+    }
+}
+
+componentDidMount(){
+    this.showButton()
+}
+
+render(){
+  window.addEventListener('resize', this.showButton)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className ="container">
+      <Navbar/>
+      <div className='content'>
+        {this.state.mobile === true && (
+          <div className='left'>
+            <Tab/>
+          </div>
+        )}
+        <div className='right'>
+          <Content/>  
+        </div>
+      </div>
     </div>
-  );
+  )
+}
 }
 
 export default App;
